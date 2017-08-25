@@ -1,0 +1,37 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.5.RELEASE")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+
+jar {
+    baseName = 'emptyApp'
+    version =  '1.0'
+}
+
+repositories {
+    mavenCentral()
+}
+
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter")
+    testCompile("junit:junit")
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+    compile group: 'org.jsoup', name: 'jsoup', version: '1.10.3'
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile group: 'org.apache.httpcomponents', name: 'httpclient'
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.6'
+
+}
